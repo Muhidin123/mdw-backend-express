@@ -3,7 +3,7 @@ import { testEnvironmentVariable } from "../settings";
 
 const indexRouter = express.Router();
 
-indexRouter.get("/", (req, res) =>
+indexRouter.get("/", (_req, res) =>
   res.status(200).json({ message: testEnvironmentVariable })
 );
 
