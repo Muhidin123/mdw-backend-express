@@ -1,31 +1,37 @@
 export const createPagesTable = `
-CREATE TABLE IF NOT EXISTS pages (
+CREATE TABLE IF NOT EXISTS data (
   id SERIAL PRIMARY KEY,
   title VARCHAR DEFAULT '',
-  content VARCHAR NOT NULL
+  content VARCHAR NOT NULL,
+  page_id INT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
   )
   `;
 
 export const insertPages = `
-INSERT INTO pages(title, content)
-VALUES ('some page', 'some page')
+INSERT INTO data(title, content, page_id)
+VALUES ('Integer accumsan molestie nisl, id faucibus urna accumsan quis. Proin vulputate, mauris semper maximus.', '10/4', 1),
+('Morbi eget magna nunc. Aenean tristique justo enim bibendum egestas. Integer accumsan imperdiet purus.', 'Sweet Tators', 1),
+('Dagnabbit', 'Aliquam erat volutpat. Aenean ultrices in odio id tempor. Phasellus placerat eros ac vestibulum.', 1)
+
 `;
 
-export const dropPagesTable = "DROP TABLE pages";
+export const dropPagesTable = `DELETE FROM data WHERE id=1`;
 
-// export const createMessageTable = `
-// DROP TABLE IF EXISTS messages;
-// CREATE TABLE IF NOT EXISTS messages (
-//   id SERIAL PRIMARY KEY,
-//   name VARCHAR DEFAULT '',
-//   message VARCHAR NOT NULL
-//   )
-//   `;
+export const createPages = `
+CREATE TABLE IF NOT EXISTS pages (
+  id SERIAL PRIMARY KEY,
+  label VARCHAR,
+  name VARCHAR,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)
+`;
 
-// export const insertMessages = `
-// INSERT INTO messages(name, message)
-// VALUES ('chidimo', 'first message'),
-//       ('orji', 'second message')
-// `;
+export const insertIntoSinglePagesTable = `
+INSERT INTO pages(label, name)
+VALUES ('contact', 'Contact')
+`;
 
-// export const dropMessagesTable = "DROP TABLE messages";
+export const dropSinglePagesTable = "DROP TABLE pages";

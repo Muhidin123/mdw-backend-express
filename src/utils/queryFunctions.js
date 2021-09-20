@@ -1,5 +1,11 @@
 import { pool } from "../models/pool";
-import { insertPages, createPagesTable, dropPagesTable } from "./queries";
+import {
+  insertPages,
+  createPagesTable,
+  dropPagesTable,
+  insertIntoSinglePagesTable,
+  createPages,
+} from "./queries";
 
 export const executeQueryArray = async arr =>
   new Promise(resolve => {
@@ -13,3 +19,6 @@ export const executeQueryArray = async arr =>
 export const dropTables = () => executeQueryArray([dropPagesTable]);
 export const createTables = () => executeQueryArray([createPagesTable]);
 export const insertIntoTables = () => executeQueryArray([insertPages]);
+export const insertIntoSinglePageTables = () =>
+  executeQueryArray([insertIntoSinglePagesTable]);
+export const createSinglePageTable = () => executeQueryArray([createPages]);
