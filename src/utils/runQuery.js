@@ -11,5 +11,5 @@ import {
   // await insertIntoTables();
   // await createSinglePageTable();
   // await insertIntoSinglePageTables();
-  dropTables();
+  // dropTables();
 })();

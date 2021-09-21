@@ -15,6 +15,15 @@ class Model {
     if (clause) query += clause;
     return this.pool.query(query);
   }
+
+  async combinePages(_columns, clause) {
+    let query = `SELECT *, pages.created_at as createdAt, pages.updated_at as updatedAt
+    FROM ${this.table}
+    JOIN pages
+    ON data.page_id = pages.id;`;
+    if (clause) query += clause;
+    return this.pool.query(query);
+  }
 }
 
 export default Model;
