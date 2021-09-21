@@ -1,7 +1,7 @@
 import { makeObj } from "../helpers/helpers";
 import Model from "../models/model";
 
-const dataModel = new Model("data");
+const dataModel = new Model("pages");
 const contactsModel = new Model("contacts");
 
 export const addNewContact = async (req, res) => {

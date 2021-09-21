@@ -15,5 +15,5 @@ import {
   // await insertIntoSinglePageTables();
   // dropTables();
   // createContacts();
-  insertIntoContacts();
+  // insertIntoContacts();
 })();
