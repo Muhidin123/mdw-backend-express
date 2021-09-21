@@ -10,18 +10,9 @@ class Model {
     );
   }
 
-  async select(columns, clause) {
-    let query = `SELECT ${columns} FROM ${this.table}`;
-    if (clause) query += clause;
-    return this.pool.query(query);
-  }
-
-  async combinePages(_columns, clause) {
-    let query = `SELECT *, pages.created_at as createdAt, pages.updated_at as updatedAt
-    FROM ${this.table}
-    JOIN pages
-    ON data.page_id = pages.id;`;
-    if (clause) query += clause;
+  async pages(page, clause) {
+    let query = `SELECT *, pages.created_at as createdAt, pages.updated_at as updatedAt FROM "pages", "data" WHERE pages.label = '${page}' AND pages.id = data.page_id;`;
+    if (clause) query != clausel;
     return this.pool.query(query);
   }
 }

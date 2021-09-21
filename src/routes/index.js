@@ -1,10 +1,8 @@
 import express from "express";
-import { indexPage, allPages, testPages } from "../controllers";
+import { mdwPages } from "../controllers";
 
 const indexRouter = express.Router();
 
-indexRouter.get("/", indexPage);
-indexRouter.get("/pages", allPages);
-indexRouter.get("/testPages", testPages);
+indexRouter.get("/content/:page", mdwPages);
 
 export default indexRouter;

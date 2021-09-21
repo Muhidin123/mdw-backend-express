@@ -11,9 +11,7 @@ CREATE TABLE IF NOT EXISTS data (
 
 export const insertPages = `
 INSERT INTO data(title, content, page_id)
-VALUES ('Integer accumsan molestie nisl, id faucibus urna accumsan quis. Proin vulputate, mauris semper maximus.', '10/4', 1),
-('Morbi eget magna nunc. Aenean tristique justo enim bibendum egestas. Integer accumsan imperdiet purus.', 'Sweet Tators', 1),
-('Dagnabbit', 'Aliquam erat volutpat. Aenean ultrices in odio id tempor. Phasellus placerat eros ac vestibulum.', 1)
+VALUES ('Well Howdy', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do dos eiusmod tempor incididunt ut labore et trace dolore magna aliqua. Proin sagittis nisl rhoncus mattis rhoncus. At augue eget arcu dictum varius duis at consectetur lorem.', 2)
 
 `;
 
