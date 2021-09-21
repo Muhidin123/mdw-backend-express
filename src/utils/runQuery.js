@@ -1,7 +1,9 @@
 import {
+  createContacts,
   createSinglePageTable,
   createTables,
   dropTables,
+  insertIntoContacts,
   insertIntoSinglePageTables,
   insertIntoTables,
 } from "./queryFunctions";
@@ -12,4 +14,6 @@ import {
   // await createSinglePageTable();
   // await insertIntoSinglePageTables();
   // dropTables();
+  // createContacts();
+  insertIntoContacts();
 })();

@@ -2,7 +2,21 @@ import { makeObj } from "../helpers/helpers";
 import Model from "../models/model";
 
 const dataModel = new Model("data");
+const contactsModel = new Model("contacts");
 
+export const addNewContact = async (req, res) => {
+  const { first_name, last_name, email, title, message } = req.body;
+  const columns = "first_name, last_name, email, title, message";
+  const values = `'${first_name}', '${last_name}', '${email}', '${title}', '${message}'`;
+  try {
+    const data = await contactsModel.insertWithReturn(columns, values);
+    res
+      .status(200)
+      .json({ data: `Successfully added new Contact ${data.rows.first_name}` });
+  } catch (err) {
+    res.status(err.status).json({ contact: err.stack });
+  }
+};
 export const mdwPages = async (req, res) => {
   try {
     let data = [];
