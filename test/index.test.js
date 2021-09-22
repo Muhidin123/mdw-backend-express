@@ -8,7 +8,7 @@ describe("Home page test", () => {
       .end((err, res) => {
         expect(res.status).to.equal(200);
         expect(res.body.data.length).to.equal(3);
-        expect(res.body.data[0].content).to.equal("10/4");
+        expect(res.body.data[0].title).to.equal("10/4");
         done();
       });
   });
