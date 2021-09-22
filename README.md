@@ -35,6 +35,9 @@
       ```
 
 - If you do not feel like creating a new database and checking for your password and username feel free to use this link as a value for CONNECTION_STRING:
+
   - `CONNECTION_STRING=postgres://txacfydc:ELpS0t39keTVNuXvpeR56q6DufLJQ8wr@otto.db.elephantsql.com/txacfydc`
   - This is a link to a hosted db on elephantSQL and it is already seeded with data
   - IN THE CASE OF USING THIS LINK PLEASE IGNORE(skip) STEP `yarn runQuery`
+
+- To run test run `yarn test`
