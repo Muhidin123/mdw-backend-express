@@ -21,7 +21,6 @@ export const mdwPages = async (req, res) => {
   try {
     let data = [];
     const sqlReturn = await dataModel.pages(req.params.page);
-    console.log(sqlReturn.rows);
     for (let i = 0; i < sqlReturn.rows.length; i++) {
       const rows = sqlReturn.rows[i];
       data.push(makeObj(rows));

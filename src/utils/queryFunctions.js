@@ -2,11 +2,9 @@ import { pool } from "../models/pool";
 import {
   insertPages,
   createPagesTable,
-  dropPagesTable,
   insertIntoSinglePagesTable,
   createPages,
   createContactsTable,
-  addContact,
 } from "./queries";
 
 export const executeQueryArray = async arr =>
@@ -18,11 +16,9 @@ export const executeQueryArray = async arr =>
     });
   });
 
-export const dropTables = () => executeQueryArray([dropPagesTable]);
 export const createTables = () => executeQueryArray([createPagesTable]);
 export const insertIntoTables = () => executeQueryArray([insertPages]);
 export const insertIntoSinglePageTables = () =>
   executeQueryArray([insertIntoSinglePagesTable]);
 export const createSinglePageTable = () => executeQueryArray([createPages]);
 export const createContacts = () => executeQueryArray([createContactsTable]);
-export const insertIntoContacts = () => executeQueryArray([addContact]);

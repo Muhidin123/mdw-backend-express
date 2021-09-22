@@ -5,16 +5,19 @@ CREATE TABLE IF NOT EXISTS data (
   content VARCHAR NOT NULL,
   page_id INT NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (page_id)
+  REFERENCES pages(id)
   )
   `;
 
 export const insertPages = `
 INSERT INTO data(title, content, page_id)
-VALUES ('Well Howdy', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do dos eiusmod tempor incididunt ut labore et trace dolore magna aliqua. Proin sagittis nisl rhoncus mattis rhoncus. At augue eget arcu dictum varius duis at consectetur lorem.', 2)
+VALUES ('10/4', 'Integer accumsan molestie nisl, id faucibus urna accumsan quis. Proin vulputate, mauris semper maximus.', 1),
+('Sweet Tators', 'Morbi eget magna nunc. Aenean tristique justo enim bibendum egestas. Integer accumsan imperdiet purus', 1),
+('Dagnabbit', 'Aliquam erat volutpat. Aenean ultrices in odio id tempor. Phasellus placerat eros ac vestibulum.', 1),
+('Well Howdy', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do dos eiusmod tempor incididunt ut labore et trace dolore magna aliqua. Proin sagittis nisl rhoncus mattis rhoncus. At augue eget arcu dictum varius duis at consectetur lorem.', 2)
 `;
-
-export const dropPagesTable = `DELETE FROM data WHERE id=1`;
 
 export const createPages = `
 CREATE TABLE IF NOT EXISTS pages (
@@ -28,10 +31,10 @@ CREATE TABLE IF NOT EXISTS pages (
 
 export const insertIntoSinglePagesTable = `
 INSERT INTO pages(label, name)
-VALUES ('contact', 'Contact')
+VALUES ('home', 'Home'),
+        ('contact', 'Contact')
 `;
 
-export const dropSinglePagesTable = "DROP TABLE pages";
 
 export const createContactsTable = `
 CREATE TABLE IF NOT EXISTS contacts (
